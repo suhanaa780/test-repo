@@ -1,0 +1,191 @@
+Thursday, 30th June 2022
+=============================
+
+
+OOPS PRINCIPLES (4 pillars)
+1) encapsulation means bundling (data members + instance methods)
+2) data hiding - restricted access - how ? private
+3) abstraction - hiding unwanted details - SIMPLIFICATON
+4) inheritance - aquiring the characteristics from the 
+   Parent (class) , Parent's parent 
+   Biology (nature)
+   s/w engg : 100% derivable
+
+class : attributes + instance methods 
+        bundling of as ONE COHESIVE unit 
+        ENCAPSULATION
+safe guard the data member from DIRECT modificaiton 
+how ?
+access control :  private (outsider methods - cannot alter)
+RESTRICTION ---- DATA HIDING 
+
+1) what will be the input data
+   cost price, catg , how much profit?
+  (user knows v well - v clear)
+
+-----------------------------------------
+  Buss Rules/logic - process
+2) if else, loops, list , set etc
+  A B S T R A C T I O N
+ (hide unwanted details)
+  make life simple 
+-----------------------------------------
+3) display - result (desired result)
+self.category = 'K'
+self.category = 'Invalid'
+       is 'Invalid' == 'Invalid' ?
+          yes ....True
+       not True .....False
+if not self.category == 'Invalid':
+            self.calc_profit_percentage()
+            self.calc_selling_price()
+            print ('Selling Price : \t ',self.selling_price )
+
+whatever methods / statments are not needed
+(not necessary) - DO NOT USE IT 
+====
+father has the given the ATM card to withdraw 5000 rs
+to me..
+before leaving house
+1) have the right ATM card
+2) ask the PIN from father
+3) have a cover to put the money
+leave the house
+1) go to the nearest ATM
+   read - any instrcutions - all fine
+2) put the card in the slot - wait
+3) card reading - success 
+4a) prompts for PIN - remember and input the RIGHT PIN - wait
+    forgot - entered wrong PIN
+             2nd attempt - wrong pin
+             3rd attempt - wrong pin
+    CARD LOCKED  - call the Cust care
+    card is locked - 4 hours - unlocked - same PIN can be used
+    goto STEP 9 -- return home 
+4b) enter the amount to withdraw : 5000
+    try to withdraw 7000 
+5) transaction processing - happens
+6) read the instrcutions - monitor
+7) take the cash, take the card out
+8) safely put the cash in the cover - count it once again
+9) return home
+10) hand the cash cover to father
+***************************************
+Father reply
+1) checks the mobile - transaction of rs 5000 has happened
+   Ok
+2) new balnc - reflected
+>>>>
+father - why you withdrew 7000?
+wondering ? how he came to know ?
+mobile - reference 
+============================
+all ok . COMPLETE 
+===============================
+
+passing the data at the time of object creation
+(this way no need to call the input method)
+
+i.e. pass the parameters to the constructor
+def __init__(self):
+   ....
+   ...
+
+LHS          RHS
+area       = length x breadth
+perimeter  = 2 x ( length + breadth)
+
+class Rectangle:
+def __init__(self,ln,br):
+   data members  local  
+   self.length = ln
+   self.breadth = br
+   self.area = 0
+   self.perimeter = 0
+
+r1 = Rectangle()  XXX 
+
+right way ????
+
+r1 = Rectangle(10,15)  <------ right approach
+
+
+a1 = int(input('enter the length '))
+a2 = int(input('enter the breadth '))
+
+r2 = Rectangle(a1,a2)  <------ right approach
+
+WATCH
+constructor (like a method) can have default values
+class Rectangle:
+def __init__(self,ln=1,br=1):
+   data members  local  
+   self.length = ln
+   self.breadth = br
+   self.area = 0
+   self.perimeter = 0
+
+
+r3 = Rectangle()   note length and breadth will be 1 each
+r3.input_data()    prompt to input length as well breadth
+
+OR
+r3.input_length() 
+r3.input_breadth()
+
+r4 = Rectangle(10)   note breadth will be 1
+r4.input_breadth()
+
+r5 = Rectangle(10,12)   
+r5.display()   area , perimeter
+
+r5.disp_area()  <--- only area will be displayed
+r5.disp_perimter() <---- only perimeter will be displayed
+
+RULE
+whenever the constructor is having default arguments
+it means the constructor is OVERLOAED
+
+method OVER LOADING 
+===================
+method name ONE but - no. of parameters can vary
+animal_shout()  meows....(by default it is cat)
+animal_shout('Lion')  ..... roars
+animal_shout('Cuckoo') ..... sings
+
+animal_shout(anm='cat')
+ if anm == 'cat':
+    meows...
+ else:
+	 if anm == 'wolf':
+  	  howl
+	 elif anm == 'Lion' or anm == 'Tiger':
+  	  roar
+	 elif anm == 'Elephant':
+  	  xxxx
+	 elif anm == 'Cuckoo':
+  	  sings
+
+animal_shelter(anm)
+
+coffee .....  70% milk , 30% dicoction, 1 tbs sugar
+              (default)
+       ...... 60% milk  40% ...   (strong)
+
+ .... light , sugarless
+
+               80% milk , 20% .... 0 tbsp sugar
+
+ ....more sweet 
+      70% milk , 30% dicoction, 1.5 tbs sugar
+     
+
+
+
+
+
+
+
+
+
+

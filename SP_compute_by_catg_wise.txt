@@ -1,0 +1,49 @@
+#3) once 2 is working modify it to handle this...
+#   for this create another class SellingByCatgz
+#   have a attribute called category
+#   input the category as A or B or C given 
+# if it is A then profit percentage is assigned as 8.5
+# if it is B then profit percentage is 10.5 otherwise it is 12.5
+class SellingByCatgz:
+    def __init__(self):
+        self.cost_price = 0
+        self.profit_percentage = 0
+        self.selling_price = 0
+        self.category = ''
+    
+    def input_cost_price(self):
+        self.cost_price = int(input('Enter the cost price: \t '))
+        
+    def input_category(self):
+        self.category = input('Enter the Category: \t ')
+
+    def calc_profit_percentage(self):
+        if self.category == 'A' or self.category == 'a':
+            self.profit_percentage = 8.5/100
+        elif self.category == 'B' or self.category == 'b':
+            self.profit_percentage = 0.105
+        elif self.category == 'C' or self.category == 'c':
+            self.profit_percentage = 12.5/100
+        else:
+            print ('Invalid Category Entered')
+            self.category = 'Invalid'
+#            break
+        
+    def calc_selling_price(self):
+        self.selling_price = self.cost_price + (self.cost_price * self.profit_percentage)
+        
+    def display(self):
+        # calling the methods calc of selling price
+        self.calc_profit_percentage()
+        if not self.category == 'Invalid':            
+            self.calc_selling_price()
+            print ('Selling Price : \t ',self.selling_price )
+        
+print ('----in the main block - START ')
+# about to create the Selling
+SC = SellingByCatgz()  # Selling object is created
+SC.input_cost_price()   # Get cost price from user
+SC.input_category()   # Get Category from user
+#SC.calc_profit_percentage()        # Get profit percentage from user
+SC.display()  # display method prints the output. WATCH from display call the other methods
+print ('----- main block ENDS here ----')    

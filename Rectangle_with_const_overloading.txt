@@ -1,0 +1,62 @@
+#constructor (like a method) can have default values
+class Rectangle:
+    # constructor with default arguments 
+    def __init__(self,ln=1,br=1):
+        #data members  local  
+        self.length = ln
+        self.breadth = br
+        self.area = 0
+        self.perimeter = 0
+    def input_data(self):
+        self.length = int(input('enter the length '))
+        self.breadth = int(input('enter the breadth '))
+    def input_length(self):
+        self.length = int(input('enter the length '))
+    def input_breadth(self):
+        if self.length != 1:
+            print ('the length is ',self.length)
+        self.breadth = int(input('enter the breadth '))
+    def calc_area(self):
+        self.area = self.length * self.breadth
+    def calc_perimeter(self):
+        self.perimeter = 2 * (self.length+self.breadth)
+    def display(self):
+        self.calc_area()
+        self.calc_perimeter()
+        print ('Area ',self.area,' Perimeter is ',self.perimeter)
+    def disp_area(self):
+        self.calc_area()
+        print ('area of rectangle ',self.area)
+    def disp_perimter(self):
+        self.calc_perimeter()
+        print ('Perimeter of the rectangle is ',self.perimeter)
+
+print ('=====in the start of the MAIN BLOCK =======')
+r3 = Rectangle()   #note length and breadth will be 1 each
+r3.input_data()    #prompt to input length as well breadth
+
+#OR
+#r3.input_length() 
+#r3.input_breadth()
+r3.display()
+print('============ xxxxx ===================== ')
+r4 = Rectangle(10)   #note breadth will be 1
+r4.input_breadth()
+
+r5 = Rectangle(10,12)   
+r5.display()   #area , perimeter
+print('============ xxxxx ===================== ')
+r5.disp_area()  #<--- only area will be displayed
+r5.disp_perimter() #<---- only perimeter will be displayed
+
+print ('=====in the end of the MAIN BLOCK =======')
+
+
+
+
+
+
+
+
+
+
